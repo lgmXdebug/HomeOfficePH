@@ -15,6 +15,18 @@ We tested 10 ergonomic chairs available locally — from Lazada, Shopee, and phy
 
 ---
 
+📋 Table of Contents
+1. Quick Comparison Table
+2. Best Overall — Sihoo M57
+3. Best Premium — Flexispot C7
+4. Best Budget — Okano HC-2
+5. IKEA Millberget
+6. Buying Guide
+7. FAQs
+8. Final Verdict
+
+---
+
 ## Comparison Table
 
 | Chair | Price | Best For | Rating |
