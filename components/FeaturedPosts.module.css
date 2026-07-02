@@ -1,0 +1,177 @@
+.section {
+  padding: 80px 0;
+  background: var(--cream);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.header {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: var(--charcoal);
+  letter-spacing: -0.02em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.smallGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1.5px solid var(--cream-dark);
+  transition: box-shadow 0.2s, transform 0.15s, border-color 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+  border-color: var(--gold);
+}
+
+.featured {
+  grid-row: span 1;
+}
+
+.featuredEmoji {
+  font-size: 5rem;
+  background: var(--charcoal);
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.smallEmoji {
+  font-size: 2.5rem;
+  background: var(--cream-dark);
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardBody {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  width: fit-content;
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--charcoal);
+  line-height: 1.3;
+}
+
+.cardTitleSm {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--charcoal);
+  line-height: 1.3;
+}
+
+.cardExcerpt {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.cardExcerptSm {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.readTime {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: auto;
+}
+
+.viewAll {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.viewAllBtn {
+  display: inline-block;
+  padding: 12px 32px;
+  border: 1.5px solid var(--charcoal);
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  transition: background 0.2s, color 0.2s;
+}
+
+.viewAllBtn:hover {
+  background: var(--charcoal);
+  color: var(--cream);
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .smallGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .smallGrid {
+    grid-template-columns: 1fr;
+  }
+}

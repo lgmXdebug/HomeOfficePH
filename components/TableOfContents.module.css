@@ -1,0 +1,98 @@
+.toc {
+  background: var(--white);
+  border: 1.5px solid var(--cream-dark);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 32px;
+
+  /* Sticky on desktop */
+  position: sticky;
+  top: 84px;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+}
+
+.tocHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px 20px;
+  background: var(--cream);
+  border: none;
+  cursor: pointer;
+  border-bottom: 1.5px solid var(--cream-dark);
+  font-family: var(--font-body);
+}
+
+.tocTitle {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--charcoal);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.tocToggle {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+}
+
+.tocList {
+  list-style: none;
+  padding: 12px 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.tocItem {
+  display: block;
+}
+
+.tocItem.sub {
+  padding-left: 12px;
+}
+
+.tocLink {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 7px 20px;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  transition: color 0.15s, background 0.15s;
+  border-left: 2px solid transparent;
+}
+
+.tocLink:hover {
+  color: var(--charcoal);
+  background: var(--cream);
+}
+
+.tocItem.active .tocLink {
+  color: var(--charcoal);
+  font-weight: 600;
+  border-left-color: var(--gold);
+  background: var(--cream);
+}
+
+.tocNum {
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  flex-shrink: 0;
+  min-width: 16px;
+}
+
+/* Scrollbar inside TOC */
+.toc::-webkit-scrollbar { width: 4px; }
+.toc::-webkit-scrollbar-thumb { background: var(--cream-dark); border-radius: 2px; }
+
+@media (max-width: 1024px) {
+  .toc {
+    position: static;
+    max-height: none;
+    margin-bottom: 32px;
+  }
+}

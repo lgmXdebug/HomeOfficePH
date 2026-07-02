@@ -1,0 +1,174 @@
+.hero {
+  background: var(--charcoal);
+  padding: 64px 24px;
+  text-align: center;
+}
+
+.heroInner {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: var(--cream);
+  letter-spacing: -0.02em;
+}
+
+.sub {
+  font-size: 1rem;
+  color: rgba(245, 240, 232, 0.6);
+}
+
+.section {
+  padding: 60px 0 80px;
+  background: var(--cream);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  border: 1.5px solid var(--cream-dark);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s, transform 0.15s;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px;
+  border-left: 4px solid;
+  background: var(--cream);
+}
+
+.cardEmoji {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--charcoal);
+}
+
+.cardSub {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.rankList {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 16px;
+  gap: 8px;
+  flex: 1;
+}
+
+.rankItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  transition: background 0.15s;
+}
+
+.rankItem:hover {
+  background: var(--cream);
+}
+
+.rank {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.rankInfo {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.rankName {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--charcoal);
+}
+
+.rankLabel {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.rankPrice {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--charcoal);
+  font-family: var(--font-display);
+}
+
+.seeAll {
+  display: block;
+  text-align: center;
+  padding: 14px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  border-top: 1px solid var(--cream-dark);
+  transition: color 0.2s, background 0.2s;
+}
+
+.seeAll:hover {
+  color: var(--charcoal);
+  background: var(--cream);
+}
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 560px) {
+  .grid { grid-template-columns: 1fr; }
+}
