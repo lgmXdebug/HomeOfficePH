@@ -1,0 +1,89 @@
+.hero {
+  background: var(--charcoal);
+  padding: 64px 24px;
+  text-align: center;
+}
+
+.heroInner {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: var(--cream);
+  letter-spacing: -0.02em;
+}
+
+.sub {
+  font-size: 0.9rem;
+  color: rgba(247, 244, 239, 0.5);
+}
+
+.section {
+  padding: 60px 0 80px;
+  background: var(--cream);
+}
+
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.container h2 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-top: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--cream-dark);
+}
+
+.container p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.container ul {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.container li {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.container a {
+  color: var(--gold);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.container strong {
+  color: var(--charcoal);
+  font-weight: 700;
+}

@@ -15,24 +15,24 @@ export default function Footer() {
           <div className={styles.links}>
             <div className={styles.col}>
               <span className={styles.colTitle}>Categories</span>
-              <a href="#">Ergonomic Chairs</a>
-              <a href="#">Standing Desks</a>
-              <a href="#">Lighting</a>
-              <a href="#">Keyboards</a>
+              <a href="/blog?category=Chair%20Review">Ergonomic Chairs</a>
+              <a href="/blog?category=Desk%20Guide">Standing Desks</a>
+              <a href="/blog?category=Lighting">Lighting</a>
+              <a href="/blog?category=Keyboard">Keyboards</a>
             </div>
             <div className={styles.col}>
               <span className={styles.colTitle}>Content</span>
-              <a href="#">Latest Reviews</a>
-              <a href="#">Buying Guides</a>
-              <a href="#">Best Picks</a>
-              <a href="#">Budget Builds</a>
+              <a href="/blog">Latest Reviews</a>
+              <a href="/blog">Buying Guides</a>
+              <a href="/best-picks">Best Picks</a>
+              <a href="/blog?category=Budget%20Picks">Budget Builds</a>
             </div>
             <div className={styles.col}>
               <span className={styles.colTitle}>Site</span>
-              <a href="#">About</a>
-              <a href="#">Contact</a>
-              <a href="#">Privacy Policy</a>
-              <a href="#">Affiliate Disclosure</a>
+              <a href="/about">About</a>
+              <a href="/contact">Contact</a>
+              <a href="/privacy-policy">Privacy Policy</a>
+              <a href="/affiliate-disclosure">Affiliate Disclosure</a>
             </div>
           </div>
         </div>
