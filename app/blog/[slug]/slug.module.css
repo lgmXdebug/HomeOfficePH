@@ -226,3 +226,17 @@
     order: -1;
   }
 }
+
+/* Product images */
+.content :global(img) {
+  width: 100%;
+  max-width: 480px;
+  height: 320px;
+  object-fit: contain;
+  border-radius: var(--radius-lg);
+  border: 1.5px solid var(--cream-dark);
+  background: var(--white);
+  padding: 16px;
+  margin: 16px auto;
+  display: block;
+}

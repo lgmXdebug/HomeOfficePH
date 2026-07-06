@@ -42,6 +42,8 @@ function extractHeadings(md: string) {
 // Markdown to HTML with anchor IDs on headings
 function parseMarkdown(md: string): string {
   return md
+    // Images — must come BEFORE links
+    .replace(/!\[(.+?)\]\((.+?)\)/g, '<img src="$2" alt="$1" loading="lazy" />')
     // Tables
     .replace(/^\|(.+)\|$/gm, (match) => {
       const cells = match.split('|').filter(c => c.trim() !== '')
