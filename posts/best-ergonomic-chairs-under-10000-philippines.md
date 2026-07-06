@@ -33,7 +33,7 @@ We tested 10 ergonomic chairs available locally — from Lazada, Shopee, and phy
 
 **Price:** ~₱9,275 on Lazada | [Check Latest Price →](https://s.lazada.com.ph/s.ZT31NP?c=d)
 
-![Sihoo M57 Ergonomic Chair](SIHOO_M57_IMAGE_URL)
+![Sihoo M57 Ergonomic Chair](https://thingsweuse.ph/cdn/shop/products/SIHOO_M57_CLASSIC_ERGONOMIC_OFFICE_CHAIR_BLACK-BLACK_1_535x.jpg?v=1762332917)
 
 The Sihoo M57 is the best ergonomic chair under ₱10,000 you can buy in the Philippines right now. After using it daily for 3 months, the lumbar support is genuinely adjustable, the mesh backrest keeps you cool during humid Philippine afternoons, and the build quality feels solid for the price.
 
