@@ -11,7 +11,7 @@ If you're working from home in the Philippines and your back has been killing yo
 
 We tested 10 ergonomic chairs available locally — from Lazada, Shopee, and physical stores — and ranked the best ones you can actually buy right now for under ₱10,000.
 
-**Quick Answer:** The **Sihoo M57** is our top pick for most Filipino remote workers. Great lumbar support, breathable mesh, and available on Lazada for around ₱8,500.
+**Quick Answer:** The **Sihoo M57** is our top pick for most Filipino remote workers. Great lumbar support, breathable mesh, and available on Lazada for around ₱9,275.
 
 ---
 
@@ -19,7 +19,7 @@ We tested 10 ergonomic chairs available locally — from Lazada, Shopee, and phy
 
 | Chair | Price | Best For | Rating |
 |---|---|---|---|
-| Sihoo M57 | ₱8,500 | Best Overall | ⭐ 4.8/5 |
+| Sihoo M57 | ₱9,275 | Best Overall | ⭐ 4.8/5 |
 | Okano HC-2 | ₱4,200 | Best Budget | ⭐ 4.4/5 |
 | Flexispot C7 | ₱9,800 | Best Premium Under ₱10K | ⭐ 4.7/5 |
 | IKEA Millberget | ₱6,999 | Best for Small Spaces | ⭐ 4.3/5 |
@@ -31,7 +31,7 @@ We tested 10 ergonomic chairs available locally — from Lazada, Shopee, and phy
 
 ### 🥇 1. Sihoo M57 — Best Overall
 
-**Price:** ~₱8,500 on Lazada | [Check Latest Price →](https://lazada.com.ph)
+**Price:** ~₱9,275 on Lazada | [Check Latest Price →](https://s.lazada.com.ph/s.ZT31NP?c=d)
 
 The Sihoo M57 is the best ergonomic chair under ₱10,000 you can buy in the Philippines right now. After using it daily for 3 months, the lumbar support is genuinely adjustable, the mesh backrest keeps you cool during humid Philippine afternoons, and the build quality feels solid for the price.
 
@@ -46,7 +46,7 @@ The Sihoo M57 is the best ergonomic chair under ₱10,000 you can buy in the Phi
 - ❌ Only available in black
 - ❌ Seat cushion could be thicker
 
-**Bottom Line:** If you sit 6–10 hours a day and your budget is around ₱8,000–₱9,000, this is the chair to get.
+**Bottom Line:** If you sit 6–10 hours a day and your budget is around ₱9,000–₱10,000, this is the chair to get.
 
 ---
 
