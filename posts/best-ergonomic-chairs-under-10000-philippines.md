@@ -19,7 +19,7 @@ We tested 10 ergonomic chairs available locally — from Lazada, Shopee, and phy
 
 | Chair | Price | Best For | Rating |
 |---|---|---|---|
-| Sihoo M57 | ₱9,275 | Best Overall | ⭐ 4.8/5 |
+| Sihoo M57 | ₱9,275 | Best Overall | ⭐ 4.9/5 |
 | Okano HC-2 | ₱4,200 | Best Budget | ⭐ 4.4/5 |
 | Sihoo M56 Pro | ₱7,500–₱8,500 | Best Premium Under ₱10K | ⭐ 4.7/5 |
 | IKEA Millberget | ₱6,999 | Best for Small Spaces | ⭐ 4.3/5 |
