@@ -21,9 +21,9 @@ We tested 10 ergonomic chairs available locally — from Lazada, Shopee, and phy
 |---|---|---|---|
 | Sihoo M57 | ₱9,275 | Best Overall | ⭐ 4.8/5 |
 | Okano HC-2 | ₱4,200 | Best Budget | ⭐ 4.4/5 |
-| Flexispot C7 | ₱9,800 | Best Premium Under ₱10K | ⭐ 4.7/5 |
+| Sihoo M56 Pro | ₱7,500–₱8,500 | Best Premium Under ₱10K | ⭐ 4.7/5 |
 | IKEA Millberget | ₱6,999 | Best for Small Spaces | ⭐ 4.3/5 |
-| Acupuncture Chair Pro | ₱3,500 | Best Under ₱5,000 | ⭐ 4.1/5 |
+| Deli E4929 | ₱2,461 | Best Under ₱3,000 | ⭐ 4.1/5 |
 
 ---
 
@@ -52,22 +52,24 @@ The Sihoo M57 is the best ergonomic chair under ₱10,000 you can buy in the Phi
 
 ---
 
-### 🥈 2. Flexispot C7 — Best Premium Under ₱10,000
+### 🥈 2. Sihoo M56 Pro — Best Premium Under ₱10,000
 
-**Price:** ~₱9,800 on Shopee | [Check Latest Price →](https://shopee.ph)
+**Price:** ~₱7,500–₱8,500 on Lazada | [Check Latest Price →](https://www.lazada.com.ph/products/sihoo-m56-pro-latest-version-ergonomic-office-computer-gaming-desk-chair-2-year-warranty-adjustable-height-adjustable-headrest-adjustable-armrest-and-lumbar-support-recline-lock-feature-sihoo-official-i3534301871.html)
 
-If you can stretch your budget to just under ₱10,000, the Flexispot C7 edges out the Sihoo M57 in build quality and adjustability. The headrest is fully adjustable (rare at this price point).
+The Sihoo M56 Pro is the best premium chair under ₱10,000 from the same trusted brand as the M57. It features an adjustable headrest (which the M57 doesn't have), height-adjustable lumbar support, and a recline-lock feature — all with Sihoo's 2-year warranty. It's the natural step up if the M57 doesn't quite fit your needs.
 
 **Pros:**
 - ✅ Adjustable headrest included
-- ✅ Seat depth slider
-- ✅ Premium mesh material
+- ✅ Height-adjustable lumbar support
+- ✅ Recline-lock feature
+- ✅ Same Sihoo 2-year warranty
+- ✅ Available on Lazada and Shopee PH
 
 **Cons:**
-- ❌ Near the top of our budget range
-- ❌ Slightly smaller seat than the Sihoo M57
+- ❌ Foam seat cushion (not full mesh like the M57)
+- ❌ Slightly pricier than the M57
 
-**Bottom Line:** Worth the extra ₱1,300 if you want that headrest and are taller than 5'7".
+**Bottom Line:** Worth the extra pesos over the M57 if you need a headrest or want recline-lock for nap breaks. 😄
 
 ---
 
@@ -107,19 +109,26 @@ Clean minimal design that works well in tight spaces and matches most home offic
 
 ---
 
-### 5. Acupuncture Chair Pro — Best Under ₱5,000
+### 5. Deli Ergonomic Chair E4929 — Best Under ₱3,000
 
-**Price:** ~₱3,500 on Lazada | [Check Latest Price →](https://lazada.com.ph)
+**Price:** ~₱2,461 on Lazada | [Check Latest Price →](https://www.lazada.com.ph/products/pdp-i3355573727.html)
 
-A surprisingly decent chair for the price. Good as a temporary solution while saving up for something better.
+![Deli Ergonomic Chair E4929](https://img.ph.my-best.com/product_images/c56a644c32df4a2e82624f6b663ca37b.png?ixlib=rails-4.3.1&q=70&lossless=0&w=800&h=800&fit=clip&s=637278ffcfb4a36c59c5eebb674c4223)
+
+The Deli E4929 is a genuinely ergonomic chair at a budget price — unlike many cheap chairs that just look ergonomic, this one has real lumbar support, a breathable mesh high-back, and adjustable height via gas lift. It supports up to 150kg and assembles in under 20 minutes.
 
 **Pros:**
-- ✅ Very affordable
-- ✅ Contoured back provides passive support
+- ✅ Real mesh high-back with lumbar support
+- ✅ Adjustable seat height
+- ✅ 90° adjustable armrests
+- ✅ Supports up to 150kg
+- ✅ Easy assembly — under 20 minutes
 
 **Cons:**
-- ❌ Not truly ergonomic
-- ❌ Not suitable for heavy daily use
+- ❌ Fixed lumbar support (not adjustable)
+- ❌ Basic armrest adjustment
+
+**Bottom Line:** The most affordable genuinely ergonomic chair on our list. Great for students or part-time WFH workers on a tight budget.
 
 ---
 
@@ -150,8 +159,8 @@ Yes — especially if you work from home full-time. Back pain from poor posture 
 **Q: Where can I buy ergonomic chairs in the Philippines?**
 Lazada and Shopee have the widest selection. IKEA has stores in Pasay and Quezon City.
 
-**Q: What's the best ergonomic chair under ₱5,000?**
-The **Okano HC-2** at around ₱4,200.
+**Q: What's the best ergonomic chair under ₱3,000?**
+The **Deli E4929** at around ₱2,461 — real mesh back, lumbar support, and adjustable height.
 
 ---
 
