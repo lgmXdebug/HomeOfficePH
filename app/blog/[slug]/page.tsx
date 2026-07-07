@@ -21,29 +21,42 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   return { title: data.title, description: data.excerpt }
 }
 
-// Extract headings from markdown for TOC
+function getProducts(slug: string) {
+  try {
+    const dataPath = path.join(process.cwd(), 'data', 'products.json')
+    const raw = fs.readFileSync(dataPath, 'utf8')
+    const { products } = JSON.parse(raw)
+    return products.filter((p: { article: string }) => p.article === slug)
+  } catch {
+    return []
+  }
+}
+
 function extractHeadings(md: string) {
-  const lines = md.split('\n')
-  return lines
+  return md.split('\n')
     .filter(line => /^#{2,3} /.test(line))
     .map(line => {
       const level = line.startsWith('### ') ? 3 : 2
       const text = line.replace(/^#{2,3} /, '').trim()
-      const id = text
-        .toLowerCase()
-        .replace(/[^a-z0-9\s₱]/g, '')
-        .replace(/\s+/g, '-')
-        .replace(/-+/g, '-')
-        .trim()
+      const id = text.toLowerCase().replace(/[^a-z0-9\s₱]/g, '').replace(/\s+/g, '-').trim()
       return { id, text, level }
     })
 }
 
-// Markdown to HTML with anchor IDs on headings
-function parseMarkdown(md: string): string {
+function parseMarkdown(md: string, products: { id: string; affiliateUrl: string; imageUrl: string; name: string }[]): string {
+  // Build product lookup map
+  const productMap: Record<string, { affiliateUrl: string; imageUrl: string; name: string }> = {}
+  products.forEach(p => { productMap[p.id] = p })
+
   return md
-    // Images — must come BEFORE links
-    .replace(/!\[(.+?)\]\((.+?)\)/g, '<img src="$2" alt="$1" loading="lazy" />')
+    // Images
+    .replace(/!\[(.+?)\]\((.+?)\)/g, (_, alt, src) => {
+      // Try to find matching product image from data
+      const match = products.find(p => p.name.toLowerCase().includes(alt.toLowerCase().split(' ')[0]))
+      const imgSrc = match?.imageUrl || src
+      if (!imgSrc || imgSrc === 'SIHOO_M57_IMAGE_URL') return ''
+      return `<img src="${imgSrc}" alt="${alt}" loading="lazy" />`
+    })
     // Tables
     .replace(/^\|(.+)\|$/gm, (match) => {
       const cells = match.split('|').filter(c => c.trim() !== '')
@@ -71,14 +84,19 @@ function parseMarkdown(md: string): string {
     })
     // Bold
     .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-    // Italic
-    .replace(/\*(.+?)\*/g, '<em>$1</em>')
-    // Links
-    .replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
-    // Unordered list items
+    // Links — inject real affiliate URL from products.json if available
+    .replace(/\[(.+?)\]\((.+?)\)/g, (_, text, href) => {
+      // Find matching product affiliate URL
+      const match = products.find(p => p.affiliateUrl && (href.includes('lazada') || href.includes('shopee')))
+      const finalHref = match?.affiliateUrl || href
+      return `<a href="${finalHref}" target="_blank" rel="noopener noreferrer nofollow">${text}</a>`
+    })
+    // Lists
     .replace(/^- (.+)$/gm, '<li>$1</li>')
     .replace(/(<li>.*<\/li>\n?)+/gs, match => `<ul>${match}</ul>`)
-    // Horizontal rule
+    // Blockquote
+    .replace(/^> (.+)$/gm, '<blockquote>$1</blockquote>')
+    // HR
     .replace(/^---$/gm, '<hr />')
     // Paragraphs
     .split('\n\n')
@@ -97,14 +115,13 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
   const fileContent = fs.readFileSync(filePath, 'utf8')
   const { data, content } = matter(fileContent)
+  const products = getProducts(params.slug)
   const headings = extractHeadings(content)
-  const htmlContent = parseMarkdown(content)
+  const htmlContent = parseMarkdown(content, products)
 
   return (
     <main>
       <Navbar />
-
-      {/* Hero */}
       <section className={styles.hero}>
         <div className={styles.heroInner}>
           <div className={styles.meta}>
@@ -117,27 +134,17 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         </div>
       </section>
 
-      {/* Article body with sidebar TOC */}
       <section className={styles.articleSection}>
         <div className={styles.layout}>
-
-          {/* Sidebar TOC */}
           <aside className={styles.sidebar}>
             <TableOfContents headings={headings} />
           </aside>
-
-          {/* Main content */}
           <article className={styles.article}>
-            <div
-              className={styles.content}
-              dangerouslySetInnerHTML={{ __html: htmlContent }}
-            />
+            <div className={styles.content} dangerouslySetInnerHTML={{ __html: htmlContent }} />
           </article>
-
         </div>
       </section>
 
-      {/* Back to blog */}
       <div className={styles.backWrap}>
         <a href="/blog" className={styles.back}>← Back to all articles</a>
       </div>
