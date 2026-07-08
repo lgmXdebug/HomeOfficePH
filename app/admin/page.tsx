@@ -7,8 +7,8 @@ interface Product {
   name: string
   price: string
   store: string
-  affiliateUrl: string
-  imageUrl: string
+  affiliate_url: string
+  image_url: string
   article: string
   category: string
   emoji: string
@@ -99,8 +99,8 @@ export default function AdminPage() {
   }
 
   const filtered = filter === 'all' ? products : products.filter(p => p.article === filter)
-  const withLinks = products.filter(p => p.affiliateUrl).length
-  const withImages = products.filter(p => p.imageUrl).length
+  const withLinks = products.filter(p => p.affiliate_url).length
+  const withImages = products.filter(p => p.image_url).length
 
   return (
     <main className={styles.main}>
@@ -160,8 +160,8 @@ export default function AdminPage() {
             {filtered.map(p => (
               <div key={p.id} className={styles.productCard}>
                 <div className={styles.productLeft}>
-                  {p.imageUrl
-                    ? <img src={p.imageUrl} alt={p.name} className={styles.productImg} />
+                  {p.image_url
+                    ? <img src={p.image_url} alt={p.name} className={styles.productImg} />
                     : <div className={styles.productImgEmpty}>{p.emoji}</div>
                   }
                   <div className={styles.productInfo}>
@@ -172,11 +172,11 @@ export default function AdminPage() {
                 </div>
                 <div className={styles.productRight}>
                   <div className={styles.badges}>
-                    <span className={`${styles.badge} ${p.affiliateUrl ? styles.badgeGreen : styles.badgeOrange}`}>
-                      {p.affiliateUrl ? '✅ Has link' : '⚠️ No link'}
+                    <span className={`${styles.badge} ${p.affiliate_url ? styles.badgeGreen : styles.badgeOrange}`}>
+                      {p.affiliate_url ? '✅ Has link' : '⚠️ No link'}
                     </span>
-                    <span className={`${styles.badge} ${p.imageUrl ? styles.badgeGreen : styles.badgeGray}`}>
-                      {p.imageUrl ? '🖼️ Has image' : '📷 No image'}
+                    <span className={`${styles.badge} ${p.image_url ? styles.badgeGreen : styles.badgeGray}`}>
+                      {p.image_url ? '🖼️ Has image' : '📷 No image'}
                     </span>
                   </div>
                   <div className={styles.productActions}>
