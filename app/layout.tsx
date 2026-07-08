@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Lora, Inter } from 'next/font/google'
 import './globals.css'
+import AdminButton from '@/components/AdminButton'
 
 const lora = Lora({
   subsets: ['latin'],
@@ -23,7 +24,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${lora.variable} ${inter.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <AdminButton />
+      </body>
     </html>
   )
 }
