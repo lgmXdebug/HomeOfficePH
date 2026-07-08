@@ -93,7 +93,7 @@ export default function AdminPage() {
   }
 
   function startEdit(p: Product) {
-    setForm({ name: p.name, price: p.price, store: p.store, affiliateUrl: p.affiliateUrl, imageUrl: p.imageUrl, article: p.article, category: p.category, emoji: p.emoji })
+    setForm({ name: p.name, price: p.price, store: p.store, affiliateUrl: p.affiliate_url, imageUrl: p.image_url, article: p.article, category: p.category, emoji: p.emoji })
     setEditId(p.id)
     setTab('add')
   }
