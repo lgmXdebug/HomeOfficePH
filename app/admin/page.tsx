@@ -101,7 +101,7 @@ function SettingsPanel({ showMsg }: { showMsg: (text: string) => void }) {
       })
       const data = await res.json()
       if (data.ok) {
-        showMsg('✅ Password updated! You may need to redeploy Vercel for it to take effect.')
+        showMsg('✅ Password updated! Site is redeploying automatically — takes about 1 minute.')
         setCurrent('')
         setNewPass('')
         setConfirm('')
@@ -150,7 +150,7 @@ function SettingsPanel({ showMsg }: { showMsg: (text: string) => void }) {
           />
         </div>
         <div className={styles.settingsNote}>
-          ⚠️ After changing your password, Vercel will auto-redeploy your site with the new password.
+          🚀 After changing your password, your site will automatically redeploy in about 1 minute. No manual steps needed!
         </div>
         <div className={styles.formActions}>
           <button className={styles.saveBtn} onClick={handleChangePassword} disabled={saving}>

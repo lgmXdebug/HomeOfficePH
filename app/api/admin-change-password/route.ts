@@ -16,7 +16,6 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: false, error: 'New password must be at least 6 characters' }, { status: 400 })
   }
 
-  // Update the password in Vercel via Vercel API
   const vercelToken = process.env.VERCEL_TOKEN
   const projectId = process.env.VERCEL_PROJECT_ID
   const teamId = process.env.VERCEL_TEAM_ID
@@ -24,32 +23,27 @@ export async function POST(req: NextRequest) {
   if (!vercelToken || !projectId) {
     return NextResponse.json({ 
       ok: false, 
-      error: 'Vercel API not configured. Please update ADMIN_PASSWORD manually in Vercel dashboard.' 
+      error: 'Vercel API not configured.' 
     }, { status: 500 })
   }
 
   try {
-    const url = teamId
-      ? `https://api.vercel.com/v9/projects/${projectId}/env?teamId=${teamId}`
-      : `https://api.vercel.com/v9/projects/${projectId}/env`
+    const baseUrl = `https://api.vercel.com/v9/projects/${projectId}`
+    const teamQuery = teamId ? `?teamId=${teamId}` : ''
 
-    // Get existing env vars to find the ADMIN_PASSWORD env var ID
-    const listRes = await fetch(url, {
+    // Step 1: Get env var ID
+    const listRes = await fetch(`${baseUrl}/env${teamQuery}`, {
       headers: { Authorization: `Bearer ${vercelToken}` }
     })
     const listData = await listRes.json()
     const envVar = listData.envs?.find((e: { key: string }) => e.key === 'ADMIN_PASSWORD')
 
     if (!envVar) {
-      return NextResponse.json({ ok: false, error: 'ADMIN_PASSWORD env var not found in Vercel' }, { status: 404 })
+      return NextResponse.json({ ok: false, error: 'ADMIN_PASSWORD not found in Vercel' }, { status: 404 })
     }
 
-    // Update the env var
-    const updateUrl = teamId
-      ? `https://api.vercel.com/v9/projects/${projectId}/env/${envVar.id}?teamId=${teamId}`
-      : `https://api.vercel.com/v9/projects/${projectId}/env/${envVar.id}`
-
-    const updateRes = await fetch(updateUrl, {
+    // Step 2: Update the env var
+    const updateRes = await fetch(`${baseUrl}/env/${envVar.id}${teamQuery}`, {
       method: 'PATCH',
       headers: {
         Authorization: `Bearer ${vercelToken}`,
@@ -59,12 +53,36 @@ export async function POST(req: NextRequest) {
     })
 
     if (!updateRes.ok) {
-      throw new Error('Failed to update Vercel env var')
+      throw new Error('Failed to update env var')
     }
 
-    return NextResponse.json({ ok: true })
+    // Step 3: Auto-trigger redeploy
+    const deployRes = await fetch(
+      `https://api.vercel.com/v13/deployments${teamQuery}`,
+      {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${vercelToken}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: projectId,
+          gitSource: {
+            type: 'github',
+            repoId: process.env.VERCEL_GIT_REPO_ID,
+            ref: 'main'
+          },
+          target: 'production'
+        })
+      }
+    )
+
+    const deployData = await deployRes.json()
+    console.log('Redeploy triggered:', deployData?.id || 'unknown')
+
+    return NextResponse.json({ ok: true, redeploying: true })
   } catch (err) {
     console.error(err)
-    return NextResponse.json({ ok: false, error: 'Failed to update password in Vercel' }, { status: 500 })
+    return NextResponse.json({ ok: false, error: 'Failed to update password' }, { status: 500 })
   }
 }
