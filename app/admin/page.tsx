@@ -30,8 +30,62 @@ const EMPTY_FORM = {
   article: ARTICLES[0].slug, category: 'Chair Review', emoji: '🪑'
 }
 
+// ── Login screen ──────────────────────────────────────────────
+function LoginScreen({ onLogin }: { onLogin: () => void }) {
+  const [password, setPassword] = useState('')
+  const [error, setError] = useState('')
+  const [loading, setLoading] = useState(false)
+
+  async function handleLogin() {
+    if (!password) return
+    setLoading(true)
+    setError('')
+    // Check against env variable via API
+    const res = await fetch('/api/admin-auth', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ password })
+    })
+    const data = await res.json()
+    if (data.ok) {
+      sessionStorage.setItem('admin_auth', '1')
+      onLogin()
+    } else {
+      setError('Wrong password. Try again.')
+    }
+    setLoading(false)
+  }
+
+  return (
+    <div className={styles.loginWrap}>
+      <div className={styles.loginCard}>
+        <div className={styles.loginLogo}>🌿</div>
+        <h1 className={styles.loginTitle}>HomeOfficePH Admin</h1>
+        <p className={styles.loginSub}>Enter your admin password to continue</p>
+        <input
+          className={styles.loginInput}
+          type="password"
+          placeholder="Admin password"
+          value={password}
+          onChange={e => setPassword(e.target.value)}
+          onKeyDown={e => e.key === 'Enter' && handleLogin()}
+          autoFocus
+        />
+        {error && <p className={styles.loginError}>{error}</p>}
+        <button className={styles.loginBtn} onClick={handleLogin} disabled={loading}>
+          {loading ? 'Checking...' : 'Sign In →'}
+        </button>
+        <a href="/" className={styles.loginBack}>← Back to site</a>
+      </div>
+    </div>
+  )
+}
+
+// ── Main admin dashboard ──────────────────────────────────────
 export default function AdminPage() {
-  const [tab, setTab] = useState<'products' | 'add' | 'edit'>('products')
+  const [authed, setAuthed] = useState(false)
+  const [checking, setChecking] = useState(true)
+  const [tab, setTab] = useState<'products' | 'add'>('products')
   const [products, setProducts] = useState<Product[]>([])
   const [form, setForm] = useState({ ...EMPTY_FORM })
   const [editId, setEditId] = useState<string | null>(null)
@@ -39,7 +93,15 @@ export default function AdminPage() {
   const [saving, setSaving] = useState(false)
   const [msg, setMsg] = useState('')
 
-  useEffect(() => { fetchProducts() }, [])
+  useEffect(() => {
+    const auth = sessionStorage.getItem('admin_auth')
+    if (auth === '1') setAuthed(true)
+    setChecking(false)
+  }, [])
+
+  useEffect(() => {
+    if (authed) fetchProducts()
+  }, [authed])
 
   async function fetchProducts() {
     const res = await fetch('/api/products')
@@ -50,6 +112,11 @@ export default function AdminPage() {
   function showMsg(text: string) {
     setMsg(text)
     setTimeout(() => setMsg(''), 3000)
+  }
+
+  function handleLogout() {
+    sessionStorage.removeItem('admin_auth')
+    setAuthed(false)
   }
 
   async function saveProduct() {
@@ -98,6 +165,9 @@ export default function AdminPage() {
     setTab('add')
   }
 
+  if (checking) return <div className={styles.checking}>Loading...</div>
+  if (!authed) return <LoginScreen onLogin={() => setAuthed(true)} />
+
   const filtered = filter === 'all' ? products : products.filter(p => p.article === filter)
   const withLinks = products.filter(p => p.affiliate_url).length
   const withImages = products.filter(p => p.image_url).length
@@ -109,12 +179,14 @@ export default function AdminPage() {
           <h1 className={styles.title}>🌿 HomeOfficePH Admin</h1>
           <p className={styles.sub}>Manage your products, affiliate links, and images</p>
         </div>
-        <a href="/" className={styles.viewSite}>View site →</a>
+        <div className={styles.headerActions}>
+          <a href="/" className={styles.viewSite}>View site →</a>
+          <button className={styles.logoutBtn} onClick={handleLogout}>Log out</button>
+        </div>
       </div>
 
       {msg && <div className={styles.toast}>{msg}</div>}
 
-      {/* Stats */}
       <div className={styles.stats}>
         <div className={styles.stat}>
           <span className={styles.statNum}>{products.length}</span>
@@ -134,7 +206,6 @@ export default function AdminPage() {
         </div>
       </div>
 
-      {/* Tabs */}
       <div className={styles.tabs}>
         <button className={`${styles.tab} ${tab === 'products' ? styles.activeTab : ''}`} onClick={() => { setTab('products'); setEditId(null); setForm({ ...EMPTY_FORM }) }}>All Products</button>
         <button className={`${styles.tab} ${tab === 'add' ? styles.activeTab : ''}`} onClick={() => setTab('add')}>
@@ -142,7 +213,6 @@ export default function AdminPage() {
         </button>
       </div>
 
-      {/* Products list */}
       {tab === 'products' && (
         <div className={styles.section}>
           <div className={styles.filterRow}>
@@ -190,17 +260,14 @@ export default function AdminPage() {
         </div>
       )}
 
-      {/* Add / Edit form */}
       {tab === 'add' && (
         <div className={styles.section}>
           <h2 className={styles.sectionTitle}>{editId ? 'Edit Product' : 'Add New Product'}</h2>
-
           <div className={styles.form}>
             <div className={styles.formRow}>
               <label className={styles.label}>Product Name *</label>
               <input className={styles.input} placeholder="e.g. Logitech C920 Webcam" value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} />
             </div>
-
             <div className={styles.formGrid}>
               <div className={styles.formRow}>
                 <label className={styles.label}>Price (₱) *</label>
@@ -217,26 +284,22 @@ export default function AdminPage() {
                 </select>
               </div>
             </div>
-
             <div className={styles.formRow}>
               <label className={styles.label}>Affiliate Link URL</label>
-              <input className={styles.input} placeholder="https://s.lazada.com.ph/s.xxxxx or https://shopee.ph/..." value={form.affiliateUrl} onChange={e => setForm({ ...form, affiliateUrl: e.target.value })} />
+              <input className={styles.input} placeholder="https://s.lazada.com.ph/s.xxxxx" value={form.affiliateUrl} onChange={e => setForm({ ...form, affiliateUrl: e.target.value })} />
               <span className={styles.hint}>Copy from your Lazada/Shopee affiliate dashboard</span>
             </div>
-
             <div className={styles.formRow}>
               <label className={styles.label}>Product Image URL</label>
               <input className={styles.input} placeholder="https://ph-live.slatic.net/p/xxxxx.jpg" value={form.imageUrl} onChange={e => setForm({ ...form, imageUrl: e.target.value })} />
-              <span className={styles.hint}>Right-click product photo on Lazada/Shopee → Copy image address</span>
+              <span className={styles.hint}>Right-click product photo → Copy image address</span>
             </div>
-
             {form.imageUrl && (
               <div className={styles.imgPreview}>
                 <img src={form.imageUrl} alt="Preview" onError={e => (e.currentTarget.style.display = 'none')} />
                 <span>Image preview</span>
               </div>
             )}
-
             <div className={styles.formGrid}>
               <div className={styles.formRow}>
                 <label className={styles.label}>Article</label>
@@ -249,7 +312,6 @@ export default function AdminPage() {
                 <input className={styles.input} placeholder="🪑" value={form.emoji} onChange={e => setForm({ ...form, emoji: e.target.value })} />
               </div>
             </div>
-
             <div className={styles.formActions}>
               <button className={styles.saveBtn} onClick={saveProduct} disabled={saving}>
                 {saving ? 'Saving...' : editId ? 'Update Product' : 'Add Product'}
