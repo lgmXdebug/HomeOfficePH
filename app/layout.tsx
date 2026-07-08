@@ -16,6 +16,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
+  //title: 'Home Office PH — Build Your Perfect Work-From-Home Setup',
   title: {
     default: "HomeOfficePH",
     template: "%s | HomeOfficePH",
