@@ -7,7 +7,7 @@ const reasons = [
     desc: 'We buy and use every product we review. No freebies, no bias — just honest, first-hand experience.',
   },
   {
-    icon: '🇵🇭',
+    icon: '🌴',
     title: 'Made for Filipinos',
     desc: 'We factor in local availability, peso pricing, and Philippine shipping realities — not just USD price tags.',
   },
@@ -35,7 +35,7 @@ export default function WhyUs() {
             We're not that. We test, we compare, and we tell you the truth — even when
             a product isn't worth your money.
           </p>
-          <a href="#about" className={styles.link}>Learn more about us →</a>
+          <a href="/about" className={styles.link}>Learn more about us →</a>
         </div>
 
         <div className={styles.right}>

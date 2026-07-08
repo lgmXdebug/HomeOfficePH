@@ -1,0 +1,59 @@
+{
+  "products": [
+    {
+      "id": "sihoo-m57",
+      "name": "Sihoo M57 Ergonomic Chair",
+      "price": "9275",
+      "store": "Lazada",
+      "affiliateUrl": "https://s.lazada.com.ph/s.ZT31NP?c=d",
+      "imageUrl": "https://thingsweuse.ph/cdn/shop/products/SIHOO_M57_CLASSIC_ERGONOMIC_OFFICE_CHAIR_BLACK-BLACK_1_535x.jpg?v=1762332917",
+      "article": "best-ergonomic-chairs-under-10000-philippines",
+      "category": "Chair Review",
+      "emoji": "🪑"
+    },
+    {
+      "id": "ttracing-duo-v4",
+      "name": "TTRacing Duo V4",
+      "price": "5760",
+      "store": "Shopee",
+      "affiliateUrl": "",
+      "imageUrl": "https://img.ph.my-best.com/product_images/79c3040b1c8890a128b8074e2f7c1f1f.jpeg?ixlib=rails-4.3.1&q=70&lossless=0&w=800&h=800&fit=clip&s=675cfd879fba16a209fbe186bcf2614d",
+      "article": "best-ergonomic-chairs-under-10000-philippines",
+      "category": "Chair Review",
+      "emoji": "🪑"
+    },
+    {
+      "id": "aiodiy-ergonomic",
+      "name": "AIODIY Ergonomic Chair",
+      "price": "2338",
+      "store": "Lazada",
+      "affiliateUrl": "",
+      "imageUrl": "https://img.ph.my-best.com/product_images/2631eee50fd5616ec14fcbea757f0c5e.jpeg?ixlib=rails-4.3.1&q=70&lossless=0&w=800&h=800&fit=clip&s=85ea6b727ca6f9fc8e1ac98e0e864e37",
+      "article": "best-ergonomic-chairs-under-10000-philippines",
+      "category": "Chair Review",
+      "emoji": "🪑"
+    },
+    {
+      "id": "deli-e4929",
+      "name": "Deli E4929",
+      "price": "2461",
+      "store": "Lazada",
+      "affiliateUrl": "",
+      "imageUrl": "https://img.ph.my-best.com/product_images/c56a644c32df4a2e82624f6b663ca37b.png?ixlib=rails-4.3.1&q=70&lossless=0&w=800&h=800&fit=clip&s=637278ffcfb4a36c59c5eebb674c4223",
+      "article": "best-ergonomic-chairs-under-10000-philippines",
+      "category": "Chair Review",
+      "emoji": "🪑"
+    },
+    {
+      "id": "ikea-millberget",
+      "name": "IKEA Millberget",
+      "price": "6999",
+      "store": "IKEA Philippines",
+      "affiliateUrl": "",
+      "imageUrl": "",
+      "article": "best-ergonomic-chairs-under-10000-philippines",
+      "category": "Chair Review",
+      "emoji": "🪑"
+    }
+  ]
+}

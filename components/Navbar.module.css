@@ -2,7 +2,7 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(245, 240, 232, 0.92);
+  background: rgba(247, 244, 239, 0.92);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--cream-dark);
 }
@@ -24,9 +24,7 @@
   flex-shrink: 0;
 }
 
-.logoIcon {
-  font-size: 1.4rem;
-}
+.logoIcon { font-size: 1.4rem; }
 
 .logoText {
   font-family: var(--font-display);
@@ -36,9 +34,7 @@
   letter-spacing: -0.02em;
 }
 
-.logoAccent {
-  color: var(--gold);
-}
+.logoAccent { color: var(--gold); }
 
 .links {
   display: flex;
@@ -55,9 +51,7 @@
   letter-spacing: 0.01em;
 }
 
-.links a:hover {
-  color: var(--charcoal);
-}
+.links a:hover { color: var(--charcoal); }
 
 .cta {
   flex-shrink: 0;
@@ -74,7 +68,7 @@
 
 .cta:hover {
   background: var(--gold);
-  color: var(--charcoal) !important;
+  color: var(--white) !important;
 }
 
 .burger {
@@ -94,7 +88,6 @@
   height: 2px;
   background: var(--charcoal);
   border-radius: 2px;
-  transition: 0.2s;
 }
 
 @media (max-width: 768px) {
@@ -111,16 +104,7 @@
     gap: 16px;
     margin-left: 0;
   }
-
-  .links.open {
-    display: flex;
-  }
-
-  .cta {
-    display: none;
-  }
-
-  .burger {
-    display: flex;
-  }
+  .links.open { display: flex; }
+  .cta { display: none; }
+  .burger { display: flex; }
 }

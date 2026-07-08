@@ -1,14 +1,14 @@
 import styles from './Categories.module.css'
 
 const categories = [
-  { icon: '🪑', name: 'Ergonomic Chairs', count: '24 reviews', color: '#E8F4E8' },
-  { icon: '🖥️', name: 'Desks & Surfaces', count: '18 reviews', color: '#FFF4E0' },
-  { icon: '💡', name: 'Lighting', count: '15 reviews', color: '#FFF9E0' },
-  { icon: '⌨️', name: 'Keyboards & Mice', count: '22 reviews', color: '#F0F0FF' },
-  { icon: '📷', name: 'Webcams', count: '12 reviews', color: '#FFE8F0' },
-  { icon: '🎧', name: 'Headphones', count: '16 reviews', color: '#E8F0FF' },
-  { icon: '📦', name: 'Storage & Org', count: '20 reviews', color: '#E8FFF4' },
-  { icon: '🔌', name: 'Hubs & Cables', count: '10 reviews', color: '#FFF0E8' },
+  { icon: '🪑', name: 'Ergonomic Chairs', count: '24 reviews', color: '#E8F4E8', slug: 'Chair Review' },
+  { icon: '🖥️', name: 'Desks & Surfaces', count: '18 reviews', color: '#FFF4E0', slug: 'Desk Guide' },
+  { icon: '💡', name: 'Lighting', count: '15 reviews', color: '#FFF9E0', slug: 'Lighting' },
+  { icon: '⌨️', name: 'Keyboards & Mice', count: '22 reviews', color: '#F0F0FF', slug: 'Keyboard' },
+  { icon: '📷', name: 'Webcams', count: '12 reviews', color: '#FFE8F0', slug: 'Webcam' },
+  { icon: '🎧', name: 'Headphones', count: '16 reviews', color: '#E8F0FF', slug: 'Headphones' },
+  { icon: '📦', name: 'Storage & Org', count: '20 reviews', color: '#E8FFF4', slug: 'Storage' },
+  { icon: '🔌', name: 'Hubs & Cables', count: '10 reviews', color: '#FFF0E8', slug: 'Budget Picks' },
 ]
 
 export default function Categories() {
@@ -23,7 +23,11 @@ export default function Categories() {
 
         <div className={styles.grid}>
           {categories.map((cat) => (
-            <a key={cat.name} href="#" className={styles.card}>
+            <a
+              key={cat.name}
+              href={`/blog?category=${encodeURIComponent(cat.slug)}`}
+              className={styles.card}
+            >
               <div className={styles.iconWrap} style={{ background: cat.color }}>
                 <span className={styles.icon}>{cat.icon}</span>
               </div>
