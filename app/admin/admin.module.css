@@ -561,3 +561,22 @@
   border-color: #8B2D2D;
   color: #8B2D2D;
 }
+
+/* Settings */
+.settingsTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--charcoal);
+  padding-bottom: 12px;
+  border-bottom: 1.5px solid var(--cream-dark);
+}
+
+.settingsNote {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  background: #FFF9E0;
+  border: 1px solid #E8D88A;
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  line-height: 1.5;
+}

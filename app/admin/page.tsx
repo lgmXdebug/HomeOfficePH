@@ -81,11 +81,92 @@ function LoginScreen({ onLogin }: { onLogin: () => void }) {
   )
 }
 
+// ── Settings Panel ────────────────────────────────────────────
+function SettingsPanel({ showMsg }: { showMsg: (text: string) => void }) {
+  const [current, setCurrent] = useState('')
+  const [newPass, setNewPass] = useState('')
+  const [confirm, setConfirm] = useState('')
+  const [saving, setSaving] = useState(false)
+
+  async function handleChangePassword() {
+    if (!current || !newPass || !confirm) return showMsg('❌ All fields are required!')
+    if (newPass !== confirm) return showMsg('❌ New passwords do not match!')
+    if (newPass.length < 6) return showMsg('❌ Password must be at least 6 characters!')
+    setSaving(true)
+    try {
+      const res = await fetch('/api/admin-change-password', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ currentPassword: current, newPassword: newPass })
+      })
+      const data = await res.json()
+      if (data.ok) {
+        showMsg('✅ Password updated! You may need to redeploy Vercel for it to take effect.')
+        setCurrent('')
+        setNewPass('')
+        setConfirm('')
+      } else {
+        showMsg(`❌ ${data.error || 'Failed to update password'}`)
+      }
+    } catch {
+      showMsg('❌ Error updating password')
+    }
+    setSaving(false)
+  }
+
+  return (
+    <div className={styles.section}>
+      <h2 className={styles.sectionTitle}>⚙️ Settings</h2>
+      <div className={styles.form}>
+        <div className={styles.settingsTitle}>🔒 Change Admin Password</div>
+        <div className={styles.formRow}>
+          <label className={styles.label}>Current Password</label>
+          <input
+            className={styles.input}
+            type="password"
+            placeholder="Enter current password"
+            value={current}
+            onChange={e => setCurrent(e.target.value)}
+          />
+        </div>
+        <div className={styles.formRow}>
+          <label className={styles.label}>New Password</label>
+          <input
+            className={styles.input}
+            type="password"
+            placeholder="Enter new password (min 6 characters)"
+            value={newPass}
+            onChange={e => setNewPass(e.target.value)}
+          />
+        </div>
+        <div className={styles.formRow}>
+          <label className={styles.label}>Confirm New Password</label>
+          <input
+            className={styles.input}
+            type="password"
+            placeholder="Re-enter new password"
+            value={confirm}
+            onChange={e => setConfirm(e.target.value)}
+          />
+        </div>
+        <div className={styles.settingsNote}>
+          ⚠️ After changing your password, Vercel will auto-redeploy your site with the new password.
+        </div>
+        <div className={styles.formActions}>
+          <button className={styles.saveBtn} onClick={handleChangePassword} disabled={saving}>
+            {saving ? 'Updating...' : 'Update Password'}
+          </button>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 // ── Main admin dashboard ──────────────────────────────────────
 export default function AdminPage() {
   const [authed, setAuthed] = useState(false)
   const [checking, setChecking] = useState(true)
-  const [tab, setTab] = useState<'products' | 'add'>('products')
+  const [tab, setTab] = useState<'products' | 'add' | 'settings'>('products')
   const [products, setProducts] = useState<Product[]>([])
   const [form, setForm] = useState({ ...EMPTY_FORM })
   const [editId, setEditId] = useState<string | null>(null)
@@ -211,6 +292,7 @@ export default function AdminPage() {
         <button className={`${styles.tab} ${tab === 'add' ? styles.activeTab : ''}`} onClick={() => setTab('add')}>
           {editId ? '✏️ Edit Product' : '+ Add Product'}
         </button>
+        <button className={`${styles.tab} ${tab === 'settings' ? styles.activeTab : ''}`} onClick={() => setTab('settings')}>⚙️ Settings</button>
       </div>
 
       {tab === 'products' && (
@@ -322,6 +404,9 @@ export default function AdminPage() {
             </div>
           </div>
         </div>
+      )}
+      {tab === 'settings' && (
+        <SettingsPanel showMsg={showMsg} />
       )}
     </main>
   )
