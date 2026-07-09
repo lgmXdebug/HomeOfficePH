@@ -16,10 +16,21 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Home Office PH — Build Your Perfect Work-From-Home Setup',
+  metadataBase: new URL('https://home-office-ph.vercel.app'),  
+  //title: 'Home Office PH — Build Your Perfect Work-From-Home Setup',
+  title: {
+    default: "HomeOfficePH",
+    template: "%s | HomeOfficePH",
+  },
   description:
     'Honest reviews, expert guides, and curated picks for the best home office gear in the Philippines. Desks, chairs, lighting, and more.',
-}
+    robots: {
+      index: true,
+      follow: true,
+    },
+  }
+
+
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
