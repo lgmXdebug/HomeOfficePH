@@ -1,27 +1,47 @@
 'use client'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 import styles from './Navbar.module.css'
 
+const navItems = [
+  { label: 'Best Picks',href: '/best-picks', },
+  { label: 'Reviews', href: '/reviews', },
+  { label: 'Blog', href: '/blog', },
+  { label: 'About', href: '/about', },
+  { label: 'Contact', href: '/contact', },
+]
+
 export default function Navbar() {
   const [open, setOpen] = useState(false)
+  const pathname = usePathname()
 
   return (
     <nav className={styles.nav}>
       <div className={styles.container}>
-        <a href="/" className={styles.logo}>
+        <Link href="/" className={styles.logo}>
           <span className={styles.logoIcon}>🖥️</span>
           <span className={styles.logoText}>
             Home<span className={styles.logoAccent}>Office</span>PH
           </span>
-        </a>
+        </Link>
 
-        <ul className={`${styles.links} ${open ? styles.open : ''}`}>
-          <li><a href="/best-picks">Best Picks</a></li>
-          <li><a href="/reviews">Reviews</a></li>
-          <li><a href="/blog">Blog</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/contact">Contact</a></li>
-        </ul>
+      <ul className={`${styles.links} ${open ? styles.open : ''}`}>
+        {navItems.map((item) => (
+          <li key={item.href}>
+            <Link
+              href={item.href}
+              className={
+                pathname === item.href
+                  ? styles.activeLink
+                  : styles.link
+              }
+            >
+              {item.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
 
         <a href="#newsletter" className={styles.cta}>Get Free Guide</a>
 

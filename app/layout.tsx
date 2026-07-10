@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Lora, Inter } from 'next/font/google'
 import './globals.css'
-import AdminButton from '@/components/AdminButton'
+import Header from '@/components/layout/Header'
 
 const lora = Lora({
   subsets: ['latin'],
@@ -14,6 +14,7 @@ const inter = Inter({
   variable: '--font-inter',
   display: 'swap',
 })
+
 const siteDescription = 'Honest reviews, expert guides, and curated picks for the best home office gear in the Philippines. Desks, chairs, lighting, and more.'
 
 export const metadata: Metadata = {
@@ -62,7 +63,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${lora.variable} ${inter.variable}`}>
       <body>
         {children}
-        <AdminButton />
       </body>
     </html>
   )

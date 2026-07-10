@@ -108,3 +108,19 @@
   .cta { display: none; }
   .burger { display: flex; }
 }
+
+.link {
+  text-decoration: none;
+  color: inherit;
+  transition: color .2s ease;
+}
+
+.link:hover {
+  color: #6b8f5c;
+}
+
+.activeLink {
+  color: #6b8f5c;
+  font-weight: 700;
+  text-decoration: none;
+}
