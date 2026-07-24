@@ -1,101 +1,74 @@
 .footer {
-  background: #3D3020;
+  background: var(--charcoal);
   color: var(--cream);
-  padding: 60px 0 32px;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 70px 24px 30px;
 }
 
 .top {
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 60px;
-  padding-bottom: 40px;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  margin-bottom: 32px;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 50px;
 }
 
-.brand {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.logo {
-  font-family: var(--font-display);
-  font-size: 1.2rem;
-  font-weight: 700;
-}
-
-.logo span {
-  color: var(--gold);
-}
-
-.tagline {
-  font-size: 0.85rem;
-  color: rgba(245, 240, 232, 0.5);
-  line-height: 1.6;
-}
-
-.links {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-}
-
-.col {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.colTitle {
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--gold);
-  margin-bottom: 4px;
-}
-
-.col a {
-  font-size: 0.85rem;
-  color: rgba(245, 240, 232, 0.55);
-  transition: color 0.2s;
-}
-
-.col a:hover {
+.brand h2 {
+  font-size: 2rem;
+  margin-bottom: 16px;
   color: var(--cream);
 }
 
-.bottom {
+.brand p {
+  color: rgba(255,255,255,.75);
+  line-height: 1.8;
+  max-width: 340px;
+}
+
+.column h3 {
+  margin-bottom: 18px;
+  color: var(--cream);
+  font-size: 1rem;
+}
+
+.column {
   display: flex;
   flex-direction: column;
-  gap: 8px;
 }
 
-.bottom p {
-  font-size: 0.78rem;
-  color: rgba(245, 240, 232, 0.35);
+.column a {
+  color: rgba(255,255,255,.75);
+  text-decoration: none;
+  margin-bottom: 12px;
+  transition: .2s;
 }
 
-.disclosure {
-  font-style: italic;
+.column a:hover {
+  color: var(--gold);
 }
 
-@media (max-width: 900px) {
-  .top {
-    grid-template-columns: 1fr;
-    gap: 40px;
+.bottom {
+  border-top: 1px solid rgba(255,255,255,.1);
+  padding-top: 24px;
+}
+
+.bottom p:first-child {
+  margin-bottom: 8px;
+}
+
+.bottom p:last-child {
+  color: rgba(255,255,255,.65);
+  font-size: .9rem;
+}
+
+@media (max-width: 768px) {
+
+  .top{
+    grid-template-columns:1fr;
+    gap:32px;
   }
-}
 
-@media (max-width: 480px) {
-  .links {
-    grid-template-columns: 1fr 1fr;
-  }
 }

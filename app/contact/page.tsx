@@ -13,7 +13,13 @@ export default function ContactPage() {
   }
 
   function handleSubmit() {
-    if (form.name && form.email && form.message) setSent(true)
+    if (
+      form.name.trim() &&
+      form.email.trim() &&
+      form.message.trim()
+    ) {
+      setSent(true)
+    }
   }
 
   return (
@@ -22,9 +28,12 @@ export default function ContactPage() {
 
       <section className={styles.hero}>
         <div className={styles.heroInner}>
-          <span className={styles.eyebrow}>Contact Us</span>
-          <h1 className={styles.title}>Get in Touch</h1>
-          <p className={styles.sub}>Have a question, a product suggestion, or just want to say hi? We'd love to hear from you.</p>
+          <span className={styles.eyebrow}>CONTACT HOMEOFFICEPH</span>
+          <h1 className={styles.title}>Let's Talk</h1>
+          <p className={styles.sub}>
+            Questions, product suggestions, partnership inquiries, or feedback? We'd love to hear from you. 
+            We typically reply within 24–48 hours.
+          </p>
         </div>
       </section>
 
@@ -38,7 +47,7 @@ export default function ContactPage() {
                 <span className={styles.infoIcon}>✉️</span>
                 <div>
                   <h3 className={styles.infoTitle}>Email Us</h3>
-                  <p className={styles.infoText}>hello@homeofficeph.com</p>
+                  <p className={styles.infoText}>lgmabuti@gmail.com</p>
                   <p className={styles.infoNote}>We reply within 24–48 hours on weekdays.</p>
                 </div>
               </div>
@@ -46,16 +55,29 @@ export default function ContactPage() {
                 <span className={styles.infoIcon}>💼</span>
                 <div>
                   <h3 className={styles.infoTitle}>Brand Partnerships</h3>
-                  <p className={styles.infoText}>partners@homeofficeph.com</p>
-                  <p className={styles.infoNote}>For affiliate programs and product review requests. We do not accept paid reviews.</p>
+                  <p className={styles.infoText}>lgmabuti@gmail.com</p>
+                  <p className={styles.infoNote}>
+                    For partnership inquiries, affiliate opportunities,
+                    or product review requests.
+
+                    Please note that accepting a product does not
+                    guarantee a positive review.
+                  </p>
                 </div>
               </div>
               <div className={styles.infoCard}>
                 <span className={styles.infoIcon}>🐛</span>
                 <div>
                   <h3 className={styles.infoTitle}>Found a Mistake?</h3>
-                  <p className={styles.infoText}>We appreciate corrections!</p>
-                  <p className={styles.infoNote}>If you spot outdated pricing or incorrect info, please let us know.</p>
+                  <p className={styles.infoText}>Help Us Improve</p>
+                  <p className={styles.infoNote}>
+                    If you notice outdated prices,
+                    broken links,
+                    or incorrect information,
+                    please let us know.
+
+                    Your feedback helps us keep our content accurate.
+                  </p>
                 </div>
               </div>
             </div>
@@ -65,8 +87,13 @@ export default function ContactPage() {
               {sent ? (
                 <div className={styles.success}>
                   <span className={styles.successEmoji}>🎉</span>
-                  <h3>Message Sent!</h3>
-                  <p>Thanks for reaching out, {form.name}! We'll get back to you within 24–48 hours.</p>
+                  <h3>Thank You!</h3>
+                  <p>
+                    Thanks for contacting HomeOfficePH, {form.name}!
+
+                    We've received your message and will respond
+                    within 24–48 business hours.
+                  </p>
                 </div>
               ) : (
                 <div className={styles.form}>
@@ -96,13 +123,52 @@ export default function ContactPage() {
                     <label className={styles.label}>Message</label>
                     <textarea name="message" value={form.message} onChange={handleChange} className={styles.textarea} rows={5} placeholder="Write your message here..." />
                   </div>
-                  <button onClick={handleSubmit} className={styles.btn}>Send Message</button>
+                  <button
+                    onClick={handleSubmit}
+                    className={styles.btn}
+                    disabled={sent}
+                  >
+                    {sent ? 'Message Sent ✓' : 'Send Message'}
+                  </button>
                 </div>
               )}
             </div>
           </div>
         </div>
       </section>
+
+<section className={styles.faq}>
+  <div className={styles.container}>
+    <h2 className={styles.faqTitle}>
+      Frequently Asked Questions
+    </h2>
+
+    <div className={styles.faqGrid}>
+
+      <div className={styles.faqItem}>
+        <h3>How long does it take to receive a reply?</h3>
+        <p>
+          We usually respond within 24–48 business hours.
+        </p>
+      </div>
+
+      <div className={styles.faqItem}>
+        <h3>Do you accept sponsored reviews?</h3>
+        <p>
+          No. Our reviews remain independent and are never influenced by payments or sponsorships.
+        </p>
+      </div>
+
+      <div className={styles.faqItem}>
+        <h3>Can I suggest a product for review?</h3>
+        <p>
+          Absolutely! We welcome recommendations for products that would benefit Filipino remote workers and home office enthusiasts.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
 
       <Footer />
     </main>

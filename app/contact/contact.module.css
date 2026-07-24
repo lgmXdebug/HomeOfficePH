@@ -1,15 +1,15 @@
 .hero {
   background: var(--charcoal);
-  padding: 64px 24px;
+  padding: 84px 24px;
   text-align: center;
 }
 
 .heroInner {
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
 }
 
 .eyebrow {
@@ -22,14 +22,18 @@
 
 .title {
   font-family: var(--font-display);
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-size: clamp(1.8rem, 4vw, 3rem);
   font-weight: 700;
   color: var(--cream);
   letter-spacing: -0.02em;
+  line-height: 1.2;
 }
 
 .sub {
+  max-width: 560px;
+  margin: 0 auto;
   font-size: 1rem;
+  line-height: 1.8;
   color: rgba(245, 240, 232, 0.6);
 }
 
@@ -208,4 +212,36 @@
 @media (max-width: 800px) {
   .grid { grid-template-columns: 1fr; }
   .row { grid-template-columns: 1fr; }
+}
+
+.faq {
+  padding: 80px 0;
+  background: var(--cream);
+}
+
+.faqTitle {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 2rem;
+}
+
+.faqGrid {
+  display: grid;
+  gap: 24px;
+}
+
+.faqItem {
+  background: white;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.05);
+}
+
+.faqItem h3 {
+  margin-bottom: 12px;
+}
+
+.faqItem p {
+  color: var(--text-secondary);
+  line-height: 1.7;
 }

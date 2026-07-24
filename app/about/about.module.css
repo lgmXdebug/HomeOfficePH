@@ -1,6 +1,6 @@
 .hero {
   background: var(--charcoal);
-  padding: 80px 24px;
+  padding: 84px 24px;
   text-align: center;
 }
 
@@ -164,4 +164,19 @@
   .storyGrid { grid-template-columns: 1fr; }
   .storyEmoji { display: none; }
   .valuesGrid { grid-template-columns: 1fr; }
+}
+
+.mission {
+  padding: 40px 0;
+}
+
+.quote {
+  max-width: 850px;
+  margin: 0 auto;
+  padding-left: 24px;
+  border-left: 4px solid var(--gold);
+  font-size: 1.5rem;
+  font-style: italic;
+  line-height: 1.8;
+  color: var(--charcoal);
 }

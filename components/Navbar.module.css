@@ -11,7 +11,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
-  height: 68px;
+  height: 88px;
   display: flex;
   align-items: center;
   gap: 40px;
@@ -20,21 +20,24 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: 8px;
   flex-shrink: 0;
+  padding-top: 10px;
 }
 
-.logoIcon { font-size: 1.4rem; }
-
-.logoText {
-  font-family: var(--font-display);
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--charcoal);
-  letter-spacing: -0.02em;
+.logo img {
+  width: auto;
+  height: 130px;
+  transform: translateY(4px);
+  transition: transform .25s ease;  
 }
 
-.logoAccent { color: var(--gold); }
+.logo:hover img {
+  transform: translateY(4px) scale(1.03);
+}
+
+.links {
+  align-items: center;
+}
 
 .links {
   display: flex;
@@ -57,9 +60,9 @@
   flex-shrink: 0;
   background: var(--charcoal);
   color: var(--cream) !important;
-  padding: 8px 20px;
+  padding: 8px 22px;
   border-radius: var(--radius-sm);
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;

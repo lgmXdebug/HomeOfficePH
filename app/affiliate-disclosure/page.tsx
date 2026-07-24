@@ -1,6 +1,6 @@
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import styles from '../privacy-policy/page.module.css'
+import styles from './affiliate-disclosure.module.css'
 
 export default function AffiliateDisclosurePage() {
   return (
@@ -8,41 +8,83 @@ export default function AffiliateDisclosurePage() {
       <Navbar />
       <section className={styles.hero}>
         <div className={styles.heroInner}>
-          <span className={styles.eyebrow}>Legal</span>
-          <h1 className={styles.title}>Affiliate Disclosure</h1>
-          <p className={styles.sub}>Last updated: July 3, 2026</p>
+          <span className={styles.eyebrow}>AFFILIATE DISCLOSURE</span>
+
+          <h1 className={styles.title}>
+            Affiliate Disclosure
+          </h1>
+
+          <p className={styles.sub}>
+            Transparency matters. Here's how HomeOfficePH earns money while keeping our reviews honest and independent.
+          </p>
+
+          <p className={styles.updated}>
+            Last updated: July 3, 2026
+          </p>
         </div>
       </section>
 
       <section className={styles.section}>
         <div className={styles.container}>
+          <div className={styles.contentCard}>
+            <h2>1. Our Mission</h2>
 
-          <h2>Our Commitment to Transparency</h2>
-          <p>HomeOfficePH believes in full transparency with our readers. This page explains how we earn money and how that affects (or doesn't affect) our content.</p>
+            <p>
+            HomeOfficePH was created to help Filipino remote workers make informed purchasing decisions through honest reviews, buying guides, and carefully researched recommendations.
+            </p>
 
-          <h2>What Are Affiliate Links?</h2>
-          <p>Some links on HomeOfficePH are affiliate links. This means when you click a link and make a purchase, we may earn a small commission from the retailer — at no extra cost to you. The price you pay is exactly the same whether you use our link or go directly to the retailer.</p>
+            <h2>2. Affiliate Links</h2>
 
-          <h2>Which Programs Do We Participate In?</h2>
-          <ul>
-            <li><strong>Shopee Affiliate Program</strong> — for products available on Shopee Philippines</li>
-            <li><strong>Lazada Affiliate Program</strong> — for products available on Lazada Philippines</li>
-            <li><strong>Amazon Associates</strong> — for products available on Amazon</li>
-          </ul>
+            <p>
+            Some links on HomeOfficePH are affiliate links. If you click one of these links and make a purchase, we may earn a small commission from the retailer.
+            </p>
 
-          <h2>Does This Affect Our Reviews?</h2>
-          <p><strong>No.</strong> Our editorial opinions are never influenced by affiliate relationships. We recommend what we genuinely believe is best for our readers — even when that means recommending a product that earns us a lower commission or no commission at all.</p>
-          <p>We have never and will never accept payment in exchange for a positive review. Brands cannot buy our recommendations.</p>
+            <p>
+            This comes at no additional cost to you and helps support the operation of this website.
+            </p>
 
-          <h2>How We Choose Products to Review</h2>
-          <p>We choose products based on reader interest, market popularity, and our own curiosity. We purchase most products we review with our own money. Occasionally, we receive review units from brands — when this happens, we disclose it clearly in the review and it does not affect our rating or recommendation.</p>
+            <h2>3. Editorial Independence</h2>
 
-          <h2>FTC Compliance</h2>
-          <p>In accordance with the FTC's guidelines on endorsements and testimonials, we disclose our affiliate relationships clearly. You will see a disclosure note at the bottom of any article that contains affiliate links.</p>
+            <p>
+            Affiliate partnerships never influence our opinions. We do not accept payment in exchange for positive reviews, and we only recommend products that we believe provide genuine value.
+            </p>
 
-          <h2>Questions?</h2>
-          <p>If you have any questions about our affiliate relationships or how we make money, we're happy to answer them. Contact us at <a href="mailto:hello@homeofficeph.com">hello@homeofficeph.com</a></p>
+            <h2>4. How Affiliate Commissions Help</h2>
 
+            <p>
+            Affiliate commissions help cover the costs of website hosting, domain registration, research, content creation, and ongoing improvements so we can continue providing free resources for our readers.
+            </p>
+
+            <h2>5. Affiliate Programs</h2>
+
+            <p>
+            HomeOfficePH may participate in affiliate programs including:
+            </p>
+
+            <ul>
+              <li>Lazada Affiliate Program</li>
+              <li>Shopee Affiliate Program</li>
+              <li>Amazon Associates (if applicable)</li>
+            </ul>
+
+            <h2>6. No Extra Cost to You</h2>
+
+            <p>
+            Using our affiliate links does not increase the price you pay. The retailer pays us a commission after a qualifying purchase.
+            </p>
+
+            <h2>7. Our Promise</h2>
+
+            <p>
+            Our priority is to earn your trust—not commissions. If we believeS a product is not worth your money, we will say so regardless of any affiliate relationship.
+            </p>
+
+            <h2>8. Contact Us</h2>
+
+            <p>
+            If you have questions about this Affiliate Disclosure, please contact us through our Contact page.
+            </p>
+          </div>
         </div>
       </section>
       <Footer />

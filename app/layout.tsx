@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { Lora, Inter } from 'next/font/google'
 import './globals.css'
-import Header from '@/components/layout/Header'
 
 const lora = Lora({
   subsets: ['latin'],
@@ -23,11 +22,21 @@ export const metadata: Metadata = {
     default: "HomeOfficePH",
     template: "%s | HomeOfficePH",
   },
+
   description: siteDescription,
-    robots: {
-      index: true,
-      follow: true,
-    },
+
+  manifest: "/manifest.webmanifest",
+
+  icons: {
+    icon: "/images/icons/favicon.ico",
+    shortcut: "/images/icons/favicon.ico",
+    apple: "/images/icons/aDpple-touch-icon.png",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 
 //openGraph
   openGraph: {

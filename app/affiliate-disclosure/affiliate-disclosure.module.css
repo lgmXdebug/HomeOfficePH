@@ -97,9 +97,8 @@
 }
 
 .updated {
-  font-size: .85rem;
-  color: var(--text-muted);
-  margin-bottom: 12px;
+  font-size: 0.85rem;
+  color: rgba(247, 244, 239, 0.45);
 }
 
 .intro {

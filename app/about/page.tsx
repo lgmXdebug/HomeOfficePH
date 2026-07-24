@@ -13,12 +13,22 @@ export default function AboutPage() {
   return (
     <main>
       <Navbar />
-
       {/* Hero */}
       <section className={styles.hero}>
         <div className={styles.heroInner}>
-          <span className={styles.eyebrow}>About Us</span>
-          <h1 className={styles.title}>We're Just WFH Filipinos<br /><em>Who Got Tired of Bad Advice</em></h1>
+        <span className={styles.eyebrow}>ABOUT HOMEOFFICEPH</span>
+
+        <h1 className={styles.title}>
+          Helping Filipino Remote Workers
+          <br />
+          <em>Build Better Home Offices</em>
+        </h1>
+
+        <p className={styles.heroDescription}>
+          HomeOfficePH is dedicated to helping Filipinos create productive,
+          comfortable, and affordable workspaces through honest reviews,
+          practical buying guides, and carefully researched recommendations.
+        </p>
         </div>
       </section>
 
@@ -28,14 +38,41 @@ export default function AboutPage() {
           <div className={styles.storyGrid}>
             <div className={styles.storyEmoji}>🖥️</div>
             <div className={styles.storyText}>
-              <h2 className={styles.storyTitle}>Our Story</h2>
-              <p>HomeOfficePH started in 2024 when our founder — a full-time remote worker in Manila — spent three months buying the wrong chair, the wrong desk, and the wrong webcam before finally figuring out what actually works.</p>
-              <p>The problem wasn't a lack of reviews online. It was that most reviews were written for American budgets, American Amazon links, and American home sizes. Nothing was made for someone working in a 30sqm condo in Quezon City with a ₱15,000 budget.</p>
-              <p>So we built it ourselves. HomeOfficePH is the resource we wish we had when we started — honest, local, and actually useful.</p>
+              <h2 className={styles.storyTitle}>Why HomeOfficePH Exists</h2>
+              <p>
+                HomeOfficePH started with a simple goal: to make choosing home office
+                equipment easier for Filipino remote workers.
+              </p>
+
+              <p>
+                After spending years working in IT and using a home office every day,
+                I realized how difficult it was to find trustworthy recommendations
+                that were actually relevant to the Philippine market. Many reviews
+                focused on products that were unavailable locally or priced far beyond
+                what most Filipinos were willing to spend.
+              </p>
+
+              <p>
+                Instead of relying on generic advice, I created HomeOfficePH to share
+                practical buying guides, honest reviews, and product recommendations
+                that prioritize value, comfort, and productivity. Every article is
+                written with one objective: to help readers make informed purchasing
+                decisions with confidence.
+              </p>
             </div>
           </div>
         </div>
       </section>
+
+      <section className={styles.mission}>
+        <div className={styles.container}>
+          <blockquote className={styles.quote}>
+            "Our mission is simple: help every Filipino build a productive,
+            comfortable, and affordable home office without wasting money on
+            products that don't deliver."
+          </blockquote>
+        </div>
+      </section>      
 
       {/* Values */}
       <section className={styles.values}>
@@ -58,12 +95,21 @@ export default function AboutPage() {
         <div className={styles.container}>
           <div className={styles.disclosureBox}>
             <h3 className={styles.disclosureTitle}>📢 Affiliate Disclosure</h3>
-            <p>HomeOfficePH participates in affiliate programs including Amazon Associates, Lazada Affiliate, and Shopee Affiliate. When you click our links and make a purchase, we may earn a small commission at no extra cost to you. This is how we keep the site running and the reviews free.</p>
-            <p>Our editorial opinions are never influenced by affiliate relationships. We recommend what we genuinely believe is best for our readers.</p>
+            <p>
+              HomeOfficePH participates in affiliate programs, including Lazada
+              Affiliate and other trusted partner programs. If you purchase a product
+              through one of our links, we may earn a small commission at no
+              additional cost to you.
+            </p>
+
+            <p>
+              These commissions help support the website and allow us to continue
+              creating free, honest, and independent content. Affiliate partnerships
+              never influence our recommendations or editorial decisions.
+            </p>
           </div>
         </div>
       </section>
-
       <Footer />
     </main>
   )
